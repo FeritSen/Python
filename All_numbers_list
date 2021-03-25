@@ -1,0 +1,50 @@
+while True:
+    x = int(input("Please enter a number: "))
+    y = int(input("Please enter a number: "))
+    odd_list_negative = []
+    odd_list_positive = []
+    odd_list = []
+    even_list = []
+    even_list_negative = []
+    even_list_positive = []
+    if x > y:
+        for number in range(y, x):
+            if number % 2 == 1:
+                even_list.append(number)
+                if number < 0:
+                    even_list_negative.append(number)
+                elif number > 0:
+                    even_list_positive.append(number)
+                else:
+                    odd_list_positive.insert(-1, f"and {0}")
+            elif number % 2 == 0:
+                odd_list.append(number)
+                if number < 0:
+                    odd_list_negative.append(number)
+                elif number > 0:
+                    odd_list_positive.append(number)
+        print(f"odd list: {odd_list}\neven list: {even_list}")
+        print(f"odd list (positive): {odd_list_positive}\neven list (positive): {even_list_positive}")
+        print(f"odd list (negative): {odd_list_negative}\neven list (negative): {even_list_negative}")
+        break
+    elif y > x:
+        for number in range(x, y):
+            if number % 2 == 1:
+                even_list.append(number)
+                if number < 0:
+                    even_list_negative.append(number)
+                elif number > 0:
+                    even_list_positive.append(number)
+            elif number % 2 == 0:
+                odd_list.append(number)
+                if number < 0:
+                    odd_list_negative.append(number)
+                elif number > 0:
+                    odd_list_positive.append(number)
+        print(f"odd list: {odd_list}\neven list: {even_list}")
+        print(f"odd list (positive): {odd_list_positive}\neven list (positive): {even_list_positive}")
+        print(f"odd list (negative): {odd_list_negative}\neven list (negative): {even_list_negative}")
+        break
+    else:
+        print("\nPlease enter different numbers")
+        continue
